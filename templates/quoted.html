@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <table align="center">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>{{ name }}</td>
+            <td>{{ usd(price) }}</td>
+        </tr>
+    </table>
+{% endblock %}

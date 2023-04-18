@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/history">
+        <div class="mb-3">
+            <h3>Transaction History</h3>
+            <table align="center">
+                <thead>
+                    <tr>
+                        <th>Transaction Type</th>
+                        <th>Symbol</th>
+                        <th>Shares</th>
+                        <th>Price</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for hist in history %}
+                        <tr>
+                            <td>{{ hist['type'] }}</td>
+                            <td>{{ hist['symbol'] }}</td>
+                            <td>{{ hist['shares'] }}</td>
+                            <td>{{ usd(hist['price']) }}</td>
+                            <td>{{ hist['time'] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,40 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+table th,
+table td {
+    border-collapse: seperate;
+    border-spacing: 10px 0;
+    align: centered;
+    padding: 1rem;
+}
+
+select {
+    padding: 1rem;
+}
+
+td
+{
+    padding: 10px 25px 10px 25px;
+}

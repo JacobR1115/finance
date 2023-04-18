@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/">
+        <div class="mb-3">
+            <h3>Index</h3>
+            <table align="center">
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Shares</th>
+                        <th>Unit Price</th>
+                        <th>Total Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for stock in stocks %}
+                        <tr>
+                            <td>{{ stock['symbol'] }}</td>
+                            <td>{{ stock['shares'] }}</td>
+                            <td>{{ usd(lookup(stock['symbol'])["price"]) }}</td>
+                            <td>{{ usd(round((lookup(stock['symbol'])["price"]) * (stock['shares']), 2)) }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <table align="center">
+                <thead>
+                    <tr>
+                        <th>Current Cash</th>
+                        <th>Cash + Stock Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ usd(cash) }}</td>
+                        <td>{{ usd(net_cash) }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+{% endblock %}
